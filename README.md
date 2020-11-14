@@ -4,18 +4,13 @@ A Xonsh plugin to profile and log command execution to a syslog file.
 
 ## Installation
 
-To install use pip:
-
-```bash
-xpip install xontrib-syslog-shell-profiler
-# or: xpip install -U git+https://github.com/grg121/xontrib-syslog-shell-profiler
-```
+TODO
 
 ## Usage
 
 ```bash
 xontrib load syslog-shell-profiler
-# TODO: what's next?
+$XONSH_HISTORY_BACKEND = JsonSyslogHistory
 ```
 
 # TODELETE

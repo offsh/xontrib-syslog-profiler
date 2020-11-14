@@ -5,7 +5,10 @@ try:
     with open('README.md', 'r', encoding='utf-8') as fh:
         long_description = fh.read()
 except (IOError, OSError):
-    long_description = ''
+    long_description = '''
+                        A Xonsh plugin to profile and log command execution to a syslog file. It uses the default
+                        Xonsh JSON history backend modified to also log into a syslog_formated text file.
+                        '''
 
 setuptools.setup(
     name='xontrib-syslog-shell-profiler',

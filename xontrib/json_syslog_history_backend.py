@@ -70,7 +70,7 @@ class JsonSyslogHistory(JsonHistory):
         timestamp = now_date.strftime('%H:%M:%S')
 
         if 'out' in cmd:
-            command_output = self.ansi_scape.sub('', cmd['out']).replace("\n", "").replace("\t", " ")
+            command_output = self.ansi_scape.sub('', cmd['out']).replace("\n", " ").replace("\t", " ")
         else:
             command_output = 'Not available'
 
