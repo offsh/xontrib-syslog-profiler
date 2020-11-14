@@ -12,7 +12,7 @@ except (IOError, OSError):
 
 setuptools.setup(
     name='xontrib-syslog-shell-profiler',
-    version='0.1.0',
+    version='0.1.1',
     license='MIT',
     author='Francisco Navarro',
     author_email='navarromoralesdev@gmail.com',
