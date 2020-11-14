@@ -1,3 +1,4 @@
+ ![alt text](https://github.com/grg121/xontrib-syslog-profiler/blob/master/logo.png?raw=true)
 <p align="center">
 A Xonsh plugin to profile and log command execution to a syslog file.
 </p>
