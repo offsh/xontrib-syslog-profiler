@@ -5,6 +5,7 @@ import xonsh
 __all__ = ()
 
 $XONSH_HISTORY_BACKEND = JsonSyslogHistory
+$XONSH_STORE_STDOUT = True
 
 # --- COMMANDS CACHE PREDICTORS ----------------------------------------
 
