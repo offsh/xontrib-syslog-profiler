@@ -79,7 +79,7 @@ class JsonSyslogHistory(JsonHistory):
         return_value = cmd['rtn']
 
         log_line = f"{datestamp} {timestamp} xonsh_profiler: {command_input} executed with output: "
-        log_line += f" {command_output}. [{return_value}][{command_timing} seconds]"
+        log_line += f" {command_output} [{return_value}][{command_timing} seconds]"
         self.write_logs(log_line)
 
     # ---------------------------------------------------------------------------------
