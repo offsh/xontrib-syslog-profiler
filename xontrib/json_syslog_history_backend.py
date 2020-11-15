@@ -2,6 +2,7 @@ from xonsh.history.json import JsonHistory
 from datetime import datetime
 import collections
 import builtins
+import socket
 import os
 import re
 
@@ -27,6 +28,8 @@ class JsonSyslogHistory(JsonHistory):
         """
 
         self.ansi_scape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
+
+        self.hostname = socket.gethostname()
 
         def get_syslog_today_filename():
             # pylint: disable=no-member
@@ -78,7 +81,7 @@ class JsonSyslogHistory(JsonHistory):
         command_timing = cmd['ts'][1] - cmd['ts'][0]
         return_value = cmd['rtn']
 
-        log_line = f"{datestamp} {timestamp} xonsh_profiler: {command_input} executed with output: "
+        log_line = f"{datestamp} {timestamp} {self.hostname} xonsh_profiler: {command_input} executed with output: "
         log_line += f" {command_output} [{return_value}][{command_timing} seconds]"
         self.write_logs(log_line)
 
