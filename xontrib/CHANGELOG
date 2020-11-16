@@ -1,0 +1,6 @@
+[0.1]
+This is a almost-development verison of the plugin. I will just list small changes that I made from the starting version until a first stable one.
+
+- Base project created
+- Actuall hostname used as "hostname" field in syslog messages
+- Shell profiler logs will always have the same name (we will rotate logs when they're too big but the default path will be unique)
