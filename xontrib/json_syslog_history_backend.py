@@ -31,19 +31,18 @@ class JsonSyslogHistory(JsonHistory):
 
         self.hostname = socket.gethostname()
 
-        def get_syslog_today_filename():
+        def get_syslog_filename():
             # pylint: disable=no-member
             data_dir = builtins.__xonsh__.env.get("XONSH_DATA_DIR")
             data_dir = os.path.join(os.path.expanduser(data_dir), "syslog")
             if not os.path.exists(data_dir):
                 os.makedirs(data_dir)
-            datestamp = datetime.today().strftime('%b %d').replace(' ', '_')
             return os.path.join(
-                data_dir, f"xonsh-{datestamp}.log"
+                data_dir, "shell_profiler.log"
             )
 
         if syslog_filename is None:
-            self.syslog_filename = get_syslog_today_filename()
+            self.syslog_filename = get_syslog_filename()
         else:
             self.syslog_filename = syslog_filename
 
