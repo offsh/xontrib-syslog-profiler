@@ -80,7 +80,13 @@ class JsonSyslogHistory(JsonHistory):
         command_timing = cmd['ts'][1] - cmd['ts'][0]
         return_value = cmd['rtn']
 
-        log_line = f"{datestamp} {timestamp} {self.hostname} xonsh_profiler: {command_input} executed with output: "
+        pwd = data_dir = builtins.__xonsh__.env.get("PWD")
+        user = data_dir = builtins.__xonsh__.env.get("USER")
+
+        # crop long outputs
+        command_output = (command_output[:1200] + '..') if len(command_output) > 1200 else command_output
+
+        log_line = f"{datestamp} {timestamp} {self.hostname} xonsh_profiler: {command_input} executed at {pwd} by {user} with output: "
         log_line += f" {command_output} [{return_value}][{command_timing} seconds]"
         self.write_logs(log_line)
 
