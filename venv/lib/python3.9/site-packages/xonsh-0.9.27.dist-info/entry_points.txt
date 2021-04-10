@@ -1,0 +1,11 @@
+[console_scripts]
+xonsh = xonsh.main:main
+xonsh-cat = xonsh.xoreutils.cat:cat_main
+
+[pygments.lexers]
+xonsh = xonsh.pyghooks:XonshLexer
+xonshcon = xonsh.pyghooks:XonshConsoleLexer
+
+[pytest11]
+xonsh = xonsh.pytest_plugin
+
