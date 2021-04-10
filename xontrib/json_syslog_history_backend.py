@@ -84,7 +84,8 @@ class JsonSyslogHistory(JsonHistory):
         user = data_dir = builtins.__xonsh__.env.get("USER")
 
         # crop long outputs
-        command_output = (command_output[:1200] + '..') if len(command_output) > 1200 else command_output
+        # command_output = (command_output[:1200] + '..') if len(command_output) > 1200 else command_output
+        # We need to think about this!
 
         log_line = f"{datestamp} {timestamp} {self.hostname} xonsh_profiler: {command_input} executed at {pwd} by {user} with output: "
         log_line += f" {command_output} [{return_value}][{command_timing} seconds]"
